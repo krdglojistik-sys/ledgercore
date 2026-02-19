@@ -7,7 +7,7 @@ class PyObjectId(ObjectId):
           @classmethod
           def __get_validators__(cls):
                         yield cls.validate
-                    @classmethod
+                        @classmethod
           def validate(cls, v):
                         if not ObjectId.is_valid(v):
                                           raise ValueError("Invalid objectid")

@@ -4,24 +4,24 @@ from datetime import datetime
 from bson import ObjectId
 
 class PyObjectId(ObjectId):
-          @classmethod
-          def __get_validators__(cls):
-                        yield cls.validate
-                        @classmethod
-          def validate(cls, v):
-                        if not ObjectId.is_valid(v):
-                                          raise ValueError("Invalid objectid")
-                                      return ObjectId(v)
+              @classmethod
+              def __get_validators__(cls):
+                                yield cls.validate
+                            @classmethod
+              def validate(cls, v):
+                                if not ObjectId.is_valid(v):
+                                                      raise ValueError("Invalid objectid")
+                                                  return ObjectId(v)
 
 class User(BaseModel):
-          id: Optional[str] = Field(default_factory=lambda: str(ObjectId()))
+              id: Optional[str] = Field(default_factory=lambda: str(ObjectId()))
     email: str
     password: str
     name: str
     created_at: datetime = Field(default_factory=datetime.utcnow)
 
 class Contact(BaseModel):
-          id: Optional[str] = Field(default_factory=lambda: str(ObjectId()))
+              id: Optional[str] = Field(default_factory=lambda: str(ObjectId()))
     name: str
     tax_no: Optional[str] = None
     address: Optional[str] = None
@@ -32,13 +32,13 @@ class Contact(BaseModel):
     created_at: datetime = Field(default_factory=datetime.utcnow)
 
 class InvoiceItem(BaseModel):
-          product_name: str
+              product_name: str
     quantity: float
     unit_price: float
     total: float
 
 class Invoice(BaseModel):
-          id: Optional[str] = Field(default_factory=lambda: str(ObjectId()))
+              id: Optional[str] = Field(default_factory=lambda: str(ObjectId()))
     invoice_no: str
     contact_id: str
     contact_name: str

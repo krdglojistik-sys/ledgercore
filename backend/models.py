@@ -27,7 +27,7 @@ class Contact(BaseModel):
     address: Optional[str] = None
     phone: Optional[str] = None
     email: Optional[str] = None
-    contact_type: str = "customer"  # customer, supplier
+    contact_type: str = "customer"
     balance: float = 0.0
     created_at: datetime = Field(default_factory=datetime.utcnow)
 
@@ -48,5 +48,5 @@ class Invoice(BaseModel):
     sub_total: float = 0.0
     tax_total: float = 0.0
     total: float = 0.0
-    status: str = "pending"  # pending, paid, overdue
+    status: str = "pending"
     created_at: datetime = Field(default_factory=datetime.utcnow)

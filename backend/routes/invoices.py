@@ -10,7 +10,7 @@ async def get_invoices():
       invoices = list(invoices_collection.find())
       for inv in invoices:
                 inv["_id"] = str(inv["_id"])
-            return invoices
+        return invoices
 
 @router.post("/")
 async def create_invoice(invoice: Invoice):

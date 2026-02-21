@@ -6,8 +6,7 @@ load_dotenv()
 
 MONGO_URI = os.getenv("MONGO_URI")
 client = MongoClient(MONGO_URI)
-db = client.get_database()
-
+db = client.get_database("ledgercore")
 # Koleksiyonlar
 users_collection = db.users
 contacts_collection = db.contacts
